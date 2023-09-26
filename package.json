@@ -1,0 +1,31 @@
+{
+  "name": "santander-dio-2023",
+  "version": "1.0.0",
+  "description": "Repositório central para desafios, projetos e conceitos práticos do \"Santander Bootcamp 2023 - Fullstack Java+Angular\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stallone-dev/santander-dio-2023.git"
+  },
+  "keywords": [
+    "Santander",
+    "Dio",
+    "Bootcamp",
+    "Fullstack",
+    "Java",
+    "Angular",
+    "HTML",
+    "CSS",
+    "JS",
+    "Node"
+  ],
+  "author": "Stallone L. de Souza",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/stallone-dev/santander-dio-2023/issues"
+  },
+  "homepage": "https://github.com/stallone-dev/santander-dio-2023#readme"
+}
