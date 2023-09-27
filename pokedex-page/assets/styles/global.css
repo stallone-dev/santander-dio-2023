@@ -26,7 +26,14 @@
 
 * {
     font-family: "Roboto", "sans-serif";
+    box-sizing: border-box;
 }
+
+body {
+    background-color: var(--main-background);
+    color: var(--dark-font-color);
+}
+
 header {
     margin: 0;
 }
