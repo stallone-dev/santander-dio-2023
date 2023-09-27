@@ -1,0 +1,50 @@
+:root {
+    /* Colors to hard contrast */
+    --dark: hsl(245, 9%, 27%);
+    --red: hsl(355, 71%, 53%);
+    --yellow: hsl(49, 93%, 67%);
+    --blue: hsl(215, 97%, 59%);
+    --green: hsl(110, 64%, 60%);
+
+    /* Colors to soft contrasts */
+    --soft-blue: hsl(209, 94%, 72%);
+    --soft-green: hsl(110, 46%, 66%);
+    --soft-red: hsl(0, 67%, 61%);
+    --soft-yellow: hsl(60, 79%, 70%);
+
+    /* Patterns */
+    --dark-font-color: hsl(0, 0%, 16%);
+    --light-font-color: hsl(113, 29%, 95%);
+
+    --main-background: hsl(51, 100%, 97%);
+    --green-background: var(--soft-green);
+    --blue-background: var(--soft-blue);
+    --red-background: var(--soft-red);
+    --yellow-background: var(--soft-yellow);
+    --light-details-background: hsl(110, 46%, 70%);
+}
+
+* {
+    font-family: "Roboto", "sans-serif";
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--main-background);
+    color: var(--dark-font-color);
+}
+
+header {
+    margin: 0;
+}
+
+main {
+    padding: 1rem;
+}
+
+@media screen and (min-width: 992px) {
+    main {
+        max-width: 992px;
+        margin: 0 auto;
+    }
+}
