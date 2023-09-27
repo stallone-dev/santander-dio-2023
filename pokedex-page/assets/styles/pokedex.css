@@ -59,4 +59,20 @@
     align-self: flex-end;
 }
 
+@media screen and (min-width: 380px) {
+    .poke-index {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .poke-index {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .poke-index {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
 }

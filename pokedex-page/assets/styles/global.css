@@ -41,4 +41,10 @@ header {
 main {
     padding: 1rem;
 }
+
+@media screen and (min-width: 992px) {
+    main {
+        max-width: 992px;
+        margin: 0 auto;
+    }
 }
