@@ -12,32 +12,36 @@ const insert_on_pokemon_index = (cards_html) => {
 };
 
 const convert_to_pokemon_card = (pokemon) => {
-    return `<li class="pokemon-card">
-                <span class="id">#${pokemon.order}</span>
+    return `<li class="pokemon-card ${pokemon.main_type}">
+                <span class="id">#${pokemon.id}</span>
                 <span class="name">${pokemon.name}</span>
 
                 <div class="detail">
                     <ol class="types">
-                        ${get_details.type_li(pokemon)}
+                        ${pokemon.types
+                            .map((type) => `<li class="type">${type}</li>`)
+                            .join("")}
                     </ol>
-                    ${get_details.img(pokemon)}
+                    <img src="${pokemon.image}" alt="${pokemon.name} Artwork"/>
                 </div>
             </li>
             `;
 };
 
- const get_detais = {
-     type_li: (pokemon) => get_type_list(pokemon.types),
-     img: (pokemon) => get_main_image(pokemon.sprites),
- };
+// const get_detais = {
+//     order: (pokemon) => pokemon.order,
+//     name: (pokemon) => pokemon.name,
+//     type_li: (pokemon) => get_type_list(pokemon.types),
+//     img: (pokemon) => get_main_image(pokemon.sprites),
+// };
 
- const get_type_list = (pokemonTypes) => {
-     return pokemonTypes
-         .map((typeOrder) => `<li class="type">${typeOrder.type.name}</li>`)
-         .join("");
- };
+// const get_type_list = (pokemonTypes) => {
+//     return pokemonTypes
+//         .map((typeOrder) => `<li class="type">${typeOrder.type.name}</li>`)
+//         .join("");
+// };
 
- const get_main_image = (pokemonScrites) => {
-     let model = (sprite) => `<img src="${sprite.front_default}"/>`;
-     return model(pokemonScrites.other["official-artwork"]);
- };
+// const get_main_image = (pokemonScrites) => {
+//     let model = (sprite) => `<img src="${sprite.front_default}"/>`;
+//     return model(pokemonScrites.other["official-artwork"]);
+// };
