@@ -12,21 +12,32 @@ const insert_on_pokemon_index = (cards_html) => {
 };
 
 const convert_to_pokemon_card = (pokemon) => {
-    return `
-            <li class="pokemon-card">
-                <span class="id">#001</span>
+    return `<li class="pokemon-card">
+                <span class="id">#${pokemon.order}</span>
                 <span class="name">${pokemon.name}</span>
 
                 <div class="detail">
                     <ol class="types">
-                        <li class="type">grass</li>
-                        <li class="type">poison</li>
+                        ${get_details.type_li(pokemon)}
                     </ol>
-                    <img
-                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
-                        alt="${pokemon.name} artwork"
-                    />
+                    ${get_details.img(pokemon)}
                 </div>
             </li>
             `;
 };
+
+ const get_detais = {
+     type_li: (pokemon) => get_type_list(pokemon.types),
+     img: (pokemon) => get_main_image(pokemon.sprites),
+ };
+
+ const get_type_list = (pokemonTypes) => {
+     return pokemonTypes
+         .map((typeOrder) => `<li class="type">${typeOrder.type.name}</li>`)
+         .join("");
+ };
+
+ const get_main_image = (pokemonScrites) => {
+     let model = (sprite) => `<img src="${sprite.front_default}"/>`;
+     return model(pokemonScrites.other["official-artwork"]);
+ };
