@@ -2,13 +2,13 @@
 
 pokeApi.getPokemons().then((pokemon_data = []) => {
     const card_list = pokemon_data.map((data) => convert_to_pokemon_card(data));
-    const card_html = card_list.join("");
-    insert_on_pokemon_index(card_html);
+    const cards_html = card_list.join("");
+    insert_on_pokemon_index(cards_html);
 });
 
-const insert_on_pokemon_index = (card_html) => {
+const insert_on_pokemon_index = (cards_html) => {
     const poke_index = document.querySelector(".poke-index");
-    poke_index.innerHTML += card_html;
+    poke_index.innerHTML = cards_html;
 };
 
 const convert_to_pokemon_card = (pokemon) => {
