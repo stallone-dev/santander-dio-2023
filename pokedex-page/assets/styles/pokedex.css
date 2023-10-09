@@ -1,10 +1,61 @@
+/* Background cards colors */
+
+.normal {
+    background-color: hsl(0, 3%, 52%);
+}
+.fire {
+    background-color: hsl(23, 86%, 57%);
+}
+.water {
+    background-color: hsl(206, 66%, 52%);
+}
 .grass {
-    background-color: hsl(93, 69%, 54%);
+    background-color: hsl(138, 64%, 56%);
+}
+.electric {
+    background-color: hsl(50, 88%, 61%);
+}
+.ice {
+    background-color: hsl(176, 66%, 57%);
+}
+.ground {
+    background-color: hsl(45, 52%, 62%);
+}
+.flying {
+    background-color: hsl(279, 58%, 69%);
+}
+.poison {
+    background-color: hsl(296, 43%, 44%);
+}
+.fighting {
+    background-color: hsl(0, 84%, 38%);
+}
+.psychic {
+    background-color: hsl(334, 78%, 58%);
+}
+.dark {
+    background-color: hsl(40, 16%, 29%);
+}
+.rock {
+    background-color: hsl(41, 38%, 34%);
+}
+.bug {
+    background-color: hsl(72, 41%, 50%);
+}
+.ghost {
+    background-color: hsl(293, 19%, 33%);
+}
+.steel {
+    background-color: hsl(269, 33%, 76%);
+}
+.dragon {
+    background-color: hsl(240, 55%, 52%);
+}
+.fairy {
+    background-color: hsl(300, 100%, 83%);
 }
 
-.fire {
-    background-color: hsl(0, 75%, 52%);
-}
+/* ===================== */
 
 .poke-index {
     list-style: none;
@@ -36,6 +87,7 @@
 
 .pokemon-card .name {
     margin-bottom: 0;
+    text-transform: capitalize;
 }
 
 .pokemon-card .detail {
@@ -56,6 +108,7 @@
     margin: 0.25rem 0;
     padding: 0.25rem 0.5rem;
     border-radius: 1rem;
+    text-align: center;
 
     font-size: 0.625rem;
 }
