@@ -19,11 +19,11 @@ const convert_to_pokemon_card = (pokemon) => {
                 <div class="detail">
                     <ol class="types">
                         ${pokemon.types
-                            .map(
-                                (type) =>
-                                    `<li class="type ${type}">${type}</li>`
-                            )
-                            .join("")}
+        .map(
+            (type) =>
+                `<li class="type ${type}">${type}</li>`
+        )
+        .join("")}
                     </ol>
                     <img src="${pokemon.image}" alt="${pokemon.name} Artwork"/>
                 </div>
