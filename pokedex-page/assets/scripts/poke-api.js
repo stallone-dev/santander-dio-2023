@@ -2,13 +2,13 @@
 
 const pokeApi = {};
 
-function convert_api_to_pokemon_model(pokeDetail) {
+function convert_api_to_pokemon_model (pokeDetail) {
     const pokemon = new Pokemon();
     pokemon.id = pokeDetail.order;
     pokemon.name = pokeDetail.name;
     pokemon.types = pokeDetail.types.map((typeSlot) => typeSlot.type.name);
     pokemon.main_type = pokemon.types[0];
-    pokemon.image = pokeDetail.sprites.other.dream_world.front_default;
+    pokemon.image = pokeDetail.sprites.other["official-artwork"].front_default;
 
     return pokemon;
 }

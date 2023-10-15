@@ -1,14 +1,20 @@
 "use strict";
 
-pokeApi.getPokemons().then((pokemon_data = []) => {
-    const card_list = pokemon_data.map((data) => convert_to_pokemon_card(data));
-    const cards_html = card_list.join("");
-    insert_on_pokemon_index(cards_html);
-});
+const poke_index = document.querySelector(".poke-index");
+const load_index_button = document.querySelector("#loadMore");
+const offset_limit = 240;
+const limit = 32;
+let offset = 0;
+
+const load_pokemons_itens = (offset, limit) => {
+    pokeApi.getPokemons(offset, limit).then((pokemon_data = []) => {
+        const cards_html = pokemon_data.map((data) => convert_to_pokemon_card(data)).join("");
+        insert_on_pokemon_index(cards_html);
+    });
+};
 
 const insert_on_pokemon_index = (cards_html) => {
-    const poke_index = document.querySelector(".poke-index");
-    poke_index.innerHTML = cards_html;
+    poke_index.innerHTML += cards_html;
 };
 
 const convert_to_pokemon_card = (pokemon) => {
@@ -31,20 +37,17 @@ const convert_to_pokemon_card = (pokemon) => {
             `;
 };
 
-// const get_detais = {
-//     order: (pokemon) => pokemon.order,
-//     name: (pokemon) => pokemon.name,
-//     type_li: (pokemon) => get_type_list(pokemon.types),
-//     img: (pokemon) => get_main_image(pokemon.sprites),
-// };
+load_index_button.addEventListener("click", () => {
+    offset += limit;
+    const next_group = offset + limit;
 
-// const get_type_list = (pokemonTypes) => {
-//     return pokemonTypes
-//         .map((typeOrder) => `<li class="type">${typeOrder.type.name}</li>`)
-//         .join("");
-// };
+    if (next_group >= offset_limit) {
+        const new_limit = next_group - offset;
+        load_pokemons_itens(offset, new_limit);
+        load_index_button.parentElement.removeChild(load_index_button);
+    } else {
+        load_pokemons_itens(offset, limit);
+    }
+});
 
-// const get_main_image = (pokemonScrites) => {
-//     let model = (sprite) => `<img src="${sprite.front_default}"/>`;
-//     return model(pokemonScrites.other["official-artwork"]);
-// };
+load_pokemons_itens(offset, limit);
